@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: preventive-med-mvp
+    runtime: node
+    plan: starter
+    region: singapore
+    rootDir: preventive-med-mvp
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DATA_DIR
+        value: /var/data
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      # 到 Render 後台補上 OPENAI_API_KEY（若不填就跑 Demo 模式）
+    disks:
+      - name: app-data
+        mountPath: /var/data
+        sizeGB: 1
