@@ -3,53 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>預防醫學專題主目錄</title>
+  <title>預防醫學｜目錄頁</title>
   <style>
-    :root{--bg:#f3f6fb;--card:#fff;--text:#0f172a;--muted:#475569;--line:#dbe3ef;--brand:#0b6bff;}
+    :root{--bg:#0b1220;--panel:#111a2e;--card:#1a263d;--line:#2a3a57;--text:#e8edf7;--muted:#98a7c2;--accent:#4da3ff;--ok:#33d17a}
     *{box-sizing:border-box}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
-    .wrap{max-width:900px;margin:0 auto;padding:20px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
-    h1{font-size:28px;margin:0 0 8px}
-    h2{font-size:20px;margin:0 0 10px}
-    p,.muted,li{line-height:1.6}
-    .muted{color:var(--muted)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .btn{display:inline-block;background:var(--brand);color:#fff !important;padding:10px 14px;border-radius:10px;margin-right:8px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:700px){.grid{grid-template-columns:1fr}}
+    body{margin:0;background:linear-gradient(180deg,#0b1220,#0d1528);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(8,13,24,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .topbar .title{font-weight:700}
+    .chip{font-size:12px;color:#d8e7ff;background:#1e2b45;border:1px solid #2f456b;padding:4px 8px;border-radius:999px}
+    .wrap{max-width:980px;margin:0 auto;padding:14px}
+    .hero{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+    .hero h1{margin:0 0 6px;font-size:24px}
+    .hero p{margin:0;color:var(--muted)}
+    .grid{display:grid;gap:12px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .card h2{margin:0 0 6px;font-size:20px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:10px}
+    .actions{display:flex;flex-wrap:wrap;gap:8px}
+    .btn{display:inline-block;padding:9px 12px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px}
+    .btn.primary{background:var(--accent);color:#04152d}
+    .btn.secondary{background:#223352;color:#dbe8ff;border:1px solid #304a75}
+    .btn.ghost{background:transparent;color:#bcd2f8;border:1px solid #3d5278}
+    .ok{color:var(--ok)}
   </style>
 </head>
 <body>
+  <div class="topbar">
+    <div class="title">📚 預防醫學目錄頁</div>
+    <span class="chip">Index</span>
+    <span class="chip">v1.1</span>
+  </div>
+
   <main class="wrap">
-    <section class="card">
-      <h1>預防醫學專題主目錄</h1>
-      <p class="muted">主題：代謝力與慢性病風險管理（圖文版 HTML PPT）</p>
-      <a class="btn" href="./ppt-metabolic-prevention.html" target="_blank">開啟簡報</a>
-      <a class="btn" href="https://drive.google.com/uc?id=1ml64WccW0i62OpwV-6hmSrH0CI-Fefz5&export=download" target="_blank">下載 ZIP（Drive）</a>
+    <section class="hero">
+      <h1>代謝力與慢性病風險管理</h1>
+      <p>圖文版 HTML PPT 已發布，以下可直接播放、下載與查看專案。</p>
     </section>
 
     <section class="grid">
       <article class="card">
-        <h2>內容連結</h2>
-        <ul>
-          <li><a href="./ppt-metabolic-prevention.html" target="_blank">HTML 圖文版 PPT</a></li>
-          <li><a href="https://drive.google.com/file/d/1ml64WccW0i62OpwV-6hmSrH0CI-Fefz5/view?usp=drivesdk" target="_blank">Google Drive 檢視頁</a></li>
-          <li><a href="https://drive.google.com/uc?id=1ml64WccW0i62OpwV-6hmSrH0CI-Fefz5&export=download" target="_blank">Google Drive 直接下載</a></li>
-          <li><a href="./downloads/metabolic-prevention-ppt.zip" target="_blank">站內鏡像下載</a></li>
-          <li><a href="https://github.com/ericsawtw/preventive-med-mvp" target="_blank">GitHub 專案</a></li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>版本資訊</h2>
-        <ul>
-          <li>主題版本：v1.0</li>
-          <li>更新日期：2026-05-17</li>
-          <li>授權帳號：ericsawtw@gmail.com</li>
-        </ul>
-        <p class="muted">此頁為專題入口頁，僅保留發布與下載所需資訊。</p>
+        <h2>專題 #01｜代謝力與慢性病風險管理 <span class="ok">● 已上線</span></h2>
+        <div class="meta">更新：2026-05-17｜來源：S21 / 【醫】醫療健康營養(含圖說）</div>
+        <div class="actions">
+          <a class="btn primary" href="./ppt-metabolic-prevention.html" target="_blank">▶ 開啟簡報</a>
+          <a class="btn secondary" href="https://drive.google.com/uc?id=1ml64WccW0i62OpwV-6hmSrH0CI-Fefz5&export=download" target="_blank">⬇ ZIP（Drive）</a>
+          <a class="btn ghost" href="./downloads/metabolic-prevention-ppt.zip" target="_blank">⬇ ZIP（站內）</a>
+          <a class="btn ghost" href="https://github.com/ericsawtw/preventive-med-mvp" target="_blank">GitHub</a>
+        </div>
       </article>
     </section>
   </main>
