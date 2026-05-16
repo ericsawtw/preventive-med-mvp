@@ -5,24 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>預防醫學圖文簡報｜代謝力與慢性病風險管理</title>
   <style>
-    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8; --accent:#22c55e; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
-    .deck { max-width: 1024px; margin: 0 auto; padding: 24px; }
-    .slide { min-height: 78vh; background: var(--card); border-radius: 16px; padding: 28px; margin: 0 0 18px; box-shadow: 0 8px 28px rgba(0,0,0,.3); }
-    h1,h2 { margin:0 0 12px; }
-    h1 { font-size: 34px; }
-    h2 { font-size: 28px; color:#a7f3d0; }
-    p, li { font-size: 20px; line-height: 1.6; }
-    ul { margin-top: 8px; }
-    .muted { color: var(--muted); font-size: 16px; }
-    .hero { width:100%; max-height: 320px; object-fit: cover; border-radius: 12px; margin: 10px 0 14px; }
-    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .box { background:#1f2937; border-radius: 12px; padding: 14px; }
-    .tag { display:inline-block; background:#14532d; color:#dcfce7; border-radius: 999px; padding: 6px 12px; font-size: 14px; margin-bottom:10px; }
+    :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#94a3b8;--accent:#22c55e}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    .deck{max-width:1024px;margin:0 auto;padding:18px 18px 90px}
+    .slide{min-height:78vh;background:var(--card);border-radius:16px;padding:28px;margin:0 0 16px;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+    h1{font-size:34px;margin:0 0 12px} h2{font-size:28px;margin:0 0 12px;color:#a7f3d0}
+    p,li{font-size:20px;line-height:1.6} ul{margin-top:8px}
+    .muted{color:var(--muted);font-size:16px}
+    .hero{width:100%;max-height:320px;object-fit:cover;border-radius:12px;margin:10px 0 14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .box{background:#1f2937;border-radius:12px;padding:14px}
+    .tag{display:inline-block;background:#14532d;color:#dcfce7;border-radius:999px;padding:6px 12px;font-size:14px;margin-bottom:10px}
+    .controls{position:fixed;left:0;right:0;bottom:0;background:rgba(2,6,23,.95);backdrop-filter:blur(6px);border-top:1px solid #334155;padding:10px 12px;display:flex;align-items:center;gap:8px;z-index:9999}
+    .btn{border:0;border-radius:10px;padding:10px 12px;font-size:14px;font-weight:600;cursor:pointer}
+    .btn.primary{background:#2563eb;color:#fff}.btn.secondary{background:#1e293b;color:#e2e8f0}
+    .spacer{flex:1}.progress{font-size:14px;color:#cbd5e1}
+    @media (max-width:720px){p,li{font-size:18px} h1{font-size:30px} h2{font-size:24px}}
   </style>
 </head>
 <body>
-  <main class="deck">
+  <main class="deck" id="deck">
     <section class="slide">
       <span class="tag">預防醫學圖文版</span>
       <h1>代謝力與慢性病風險管理</h1>
@@ -30,16 +33,10 @@
       <img class="hero" src="assets/metabolic-prevention/cover.jpg" alt="代謝主題圖" />
       <p class="muted">目的：用可執行的生活策略，降低肥胖、糖尿病、脂肪肝與心血管風險。</p>
     </section>
-
     <section class="slide">
       <h2>01｜為什麼代謝力是預防醫學核心？</h2>
-      <ul>
-        <li>代謝失衡通常先於疾病出現，是慢性病前期的重要警訊。</li>
-        <li>血糖波動、內臟脂肪累積、睡眠不足會互相放大風險。</li>
-        <li>越早介入生活型態，越能避免後續高醫療成本。</li>
-      </ul>
+      <ul><li>代謝失衡通常先於疾病出現，是慢性病前期的重要警訊。</li><li>血糖波動、內臟脂肪累積、睡眠不足會互相放大風險。</li><li>越早介入生活型態，越能避免後續高醫療成本。</li></ul>
     </section>
-
     <section class="slide">
       <h2>02｜三大風險來源</h2>
       <div class="grid">
@@ -49,36 +46,42 @@
         <div class="box"><b>忽略追蹤</b><p>沒有定期看腰圍、空腹血糖、三酸甘油脂，容易錯過早期修正窗口。</p></div>
       </div>
     </section>
-
     <section class="slide">
       <h2>03｜可執行的「代謝防線」</h2>
       <img class="hero" src="assets/metabolic-prevention/food.jpg" alt="飲食管理" />
-      <ul>
-        <li><b>餐盤法：</b>每餐先確保蛋白質與蔬菜，再安排主食份量。</li>
-        <li><b>日常活動：</b>每天至少 7,000–10,000 步，每週 2–3 次肌力訓練。</li>
-        <li><b>睡眠修復：</b>固定就寢、減少熬夜，將睡眠視為代謝處方。</li>
-      </ul>
+      <ul><li><b>餐盤法：</b>每餐先確保蛋白質與蔬菜，再安排主食份量。</li><li><b>日常活動：</b>每天至少 7,000–10,000 步，每週 2–3 次肌力訓練。</li><li><b>睡眠修復：</b>固定就寢、減少熬夜，將睡眠視為代謝處方。</li></ul>
     </section>
-
     <section class="slide">
       <h2>04｜90 天追蹤指標（門診/自我管理）</h2>
       <img class="hero" src="assets/metabolic-prevention/activity.jpg" alt="活動追蹤" />
-      <ul>
-        <li>每 2 週：體重、腰圍、步數與運動分鐘數。</li>
-        <li>每 1–3 個月：空腹血糖、HbA1c、血脂（TG/HDL）與肝功能。</li>
-        <li>以「趨勢改善」為目標，不追求短期極端節食。</li>
-      </ul>
+      <ul><li>每 2 週：體重、腰圍、步數與運動分鐘數。</li><li>每 1–3 個月：空腹血糖、HbA1c、血脂（TG/HDL）與肝功能。</li><li>以「趨勢改善」為目標，不追求短期極端節食。</li></ul>
     </section>
-
     <section class="slide">
       <h2>05｜結語：預防重於治療</h2>
-      <ul>
-        <li>代謝力管理不是短跑，而是可持續的生活系統設計。</li>
-        <li>從飲食、運動、睡眠、追蹤四條線同步啟動，效果最好。</li>
-        <li>把「早發現、早修正」變成團隊與個人共同習慣。</li>
-      </ul>
+      <ul><li>代謝力管理不是短跑，而是可持續的生活系統設計。</li><li>從飲食、運動、睡眠、追蹤四條線同步啟動，效果最好。</li><li>把「早發現、早修正」變成團隊與個人共同習慣。</li></ul>
       <p class="muted">備註：此簡報為圖文教育版，供健康促進與衛教討論使用。</p>
     </section>
   </main>
+
+  <div class="controls">
+    <button class="btn secondary" id="homeBtn">回主目錄</button>
+    <button class="btn secondary" id="prevBtn">上一頁</button>
+    <button class="btn primary" id="nextBtn">下一頁</button>
+    <div class="spacer"></div>
+    <div class="progress" id="progress">1 / 6</div>
+  </div>
+
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    let idx=0;
+    const progress=document.getElementById('progress');
+    const goto=(n)=>{idx=Math.max(0,Math.min(slides.length-1,n));slides[idx].scrollIntoView({behavior:'smooth',block:'start'});progress.textContent=`${idx+1} / ${slides.length}`};
+    document.getElementById('prevBtn').onclick=()=>goto(idx-1);
+    document.getElementById('nextBtn').onclick=()=>goto(idx+1);
+    document.getElementById('homeBtn').onclick=()=>location.href='./index.html';
+    document.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'||e.key==='PageDown')goto(idx+1);if(e.key==='ArrowLeft'||e.key==='PageUp')goto(idx-1);if(e.key==='Home')goto(0);if(e.key==='End')goto(slides.length-1)});
+    const io=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){idx=slides.indexOf(en.target);progress.textContent=`${idx+1} / ${slides.length}`}})},{threshold:.55});
+    slides.forEach(s=>io.observe(s));
+  </script>
 </body>
 </html>
