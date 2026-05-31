@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Erica 超能力網站｜HTML PPT</title>
+  <style>
+    :root{--bg:#0b1220;--card:#111a2e;--line:#2a3a5f;--txt:#e8efff;--muted:#9fb0d6;--accent:#38bdf8}
+    *{box-sizing:border-box} html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;background:var(--bg);color:var(--txt)}
+    .deck{height:100%;position:relative;overflow:hidden}
+    .slide{position:absolute;inset:0;padding:36px;display:none}
+    .slide.active{display:grid;grid-template-rows:auto 1fr auto;gap:16px}
+    h1,h2{margin:0}.sub{color:var(--muted)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    .frame{width:100%;height:100%;min-height:420px;border:1px solid var(--line);border-radius:14px;background:white}
+    .nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:8px;background:#0f172a;border:1px solid #334155;border-radius:999px;padding:8px 10px}
+    button,a{border:0;background:#1d4ed8;color:white;padding:10px 14px;border-radius:999px;font-weight:800;text-decoration:none;cursor:pointer}
+    .ghost{background:#334155}
+    .meta{font-size:13px;color:var(--muted)}
+    ul{line-height:1.8}
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck">
+    <section class="slide active">
+      <div>
+        <h1>艾瑞卡超能力網站</h1>
+        <div class="sub">已整合進 HTML PPT，左右鍵或下方按鈕可切換</div>
+      </div>
+      <div class="card">
+        <ul>
+          <li>GitHub 能力：讀 repo、改檔、交付</li>
+          <li>Drive 協作：可走瀏覽器流程協助上傳/整理</li>
+          <li>簡報工廠：HTML PPT / 離線包 / zip 交付</li>
+          <li>自動化：排程提醒與流程整合</li>
+        </ul>
+      </div>
+      <div class="meta">檔案：deliverables/erica_superpower_site.html</div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>網站預覽（內嵌）</h2>
+        <div class="sub">這頁直接嵌入你要的超能力網站</div>
+      </div>
+      <div class="card" style="padding:10px;overflow:hidden">
+        <iframe class="frame" src="./erica_superpower_site.html" title="Erica Superpower Site"></iframe>
+      </div>
+      <div class="meta">若 iframe 受限，可直接開啟網站原始檔</div>
+    </section>
+
+    <section class="slide">
+      <div>
+        <h2>下載與分享</h2>
+        <div class="sub">可直接把這份 PPT 和網站一起打包分享</div>
+      </div>
+      <div class="card">
+        <p>建議同資料夾放兩個檔案：</p>
+        <ul>
+          <li>erica_superpower_ppt.html（這份）</li>
+          <li>erica_superpower_site.html（網站本體）</li>
+        </ul>
+        <a href="./erica_superpower_site.html" target="_blank">開啟超能力網站</a>
+      </div>
+      <div class="meta">完成 ✅</div>
+    </section>
+  </main>
+
+  <div class="nav">
+    <button class="ghost" id="prev">← 上一頁</button>
+    <button id="next">下一頁 →</button>
+  </div>
+
+  <script>
+    const slides=[...document.querySelectorAll('.slide')];
+    let i=0;
+    const render=()=>slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+    const go=(n)=>{i=(n+slides.length)%slides.length;render();};
+    document.getElementById('prev').onclick=()=>go(i-1);
+    document.getElementById('next').onclick=()=>go(i+1);
+    addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))go(i+1);if(['ArrowLeft','PageUp'].includes(e.key))go(i-1);});
+  </script>
+</body>
+</html>
