@@ -23,9 +23,9 @@
     <button class="ctrl" id="prevBtn" type="button" aria-label="上一頁">‹ 上一頁</button>
     <span class="counter" id="counter">01 / 08</span>
     <button class="ctrl" id="nextBtn" type="button" aria-label="下一頁">下一頁 ›</button>
-    <button class="ctrl voice" id="voiceBtn" type="button" aria-label="播放本頁語音介紹">播放語音</button>
-    <button class="ctrl secondary" id="scriptBtn" type="button" aria-label="查看本頁語音稿">語音稿</button>
-    <span class="hint">手機可按下一頁；語音會播放目前頁面介紹。</span>
+    <button class="ctrl voice" id="voiceBtn" type="button" aria-label="播放本頁真人語音">▶ 語音</button>
+    <button class="ctrl secondary" id="scriptBtn" type="button" aria-label="查看本頁語音稿">稿</button>
+    <span class="hint">手機可按下一頁；語音播放真人旁白。</span>
   </div><div class="progress" id="progress"></div>
 </div>
 <div class="voice-panel" id="voicePanel" role="dialog" aria-modal="true" aria-labelledby="voiceTitle">
@@ -33,7 +33,7 @@
     <h3 id="voiceTitle">本頁語音介紹稿</h3>
     <p id="voiceText"></p>
     <div class="voice-actions">
-      <button class="ctrl voice" id="speakPanelBtn" type="button">播放這段</button>
+      <button class="ctrl voice" id="speakPanelBtn" type="button">播放本頁語音</button>
       <button class="ctrl secondary" id="stopVoiceBtn" type="button">停止語音</button>
       <button class="ctrl" id="closePanelBtn" type="button">關閉</button>
     </div>
@@ -58,14 +58,18 @@
   const liveStatus=document.getElementById('liveStatus');
   let idx=0;
   let speaking=false;
+  const audioPlayer=new Audio();
+  audioPlayer.preload='metadata';
 
   function pad(n){return String(n).padStart(2,'0');}
   function pageVoice(){return slides[idx]?.dataset.voice || slides[idx]?.innerText || '';}
+  function pageAudio(){return 'audio/slide-'+pad(idx+1)+'.m4a';}
   function setStatus(text){ if(liveStatus) liveStatus.textContent=text; }
   function stopVoice(){
+    try{ audioPlayer.pause(); audioPlayer.currentTime=0; }catch(e){}
     try{ window.speechSynthesis?.cancel(); }catch(e){}
     speaking=false;
-    if(voiceBtn) voiceBtn.textContent='播放語音';
+    if(voiceBtn) voiceBtn.textContent='▶ 語音';
   }
   function safeHash(i){
     const hash='#/'+(i+1);
@@ -88,22 +92,35 @@
   function speakCurrent(){
     const text=pageVoice();
     if(!text) return;
+    if(speaking){ stopVoice(); return; }
+    stopVoice();
+    speaking=true;
+    if(voiceBtn) voiceBtn.textContent='停止';
+    audioPlayer.src=pageAudio();
+    audioPlayer.onended=function(){ speaking=false; if(voiceBtn) voiceBtn.textContent='▶ 語音'; };
+    audioPlayer.onerror=function(){ fallbackSpeech(text); };
+    const playPromise=audioPlayer.play();
+    if(playPromise && typeof playPromise.catch==='function') playPromise.catch(function(){ fallbackSpeech(text); });
+  }
+  function fallbackSpeech(text){
+    try{ audioPlayer.pause(); }catch(e){}
     if(!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)){
+      speaking=false;
+      if(voiceBtn) voiceBtn.textContent='▶ 語音';
       openPanel();
       setStatus('此瀏覽器不支援直接播放語音，已開啟文字稿。');
       return;
     }
-    if(speaking){ stopVoice(); return; }
-    stopVoice();
+    try{ window.speechSynthesis.cancel(); }catch(e){}
     const u=new SpeechSynthesisUtterance(text);
     u.lang='zh-TW';
     u.rate=0.92;
     u.pitch=1;
-    u.onstart=function(){ speaking=true; if(voiceBtn) voiceBtn.textContent='停止語音'; };
-    u.onend=function(){ speaking=false; if(voiceBtn) voiceBtn.textContent='播放語音'; };
-    u.onerror=function(){ speaking=false; if(voiceBtn) voiceBtn.textContent='播放語音'; openPanel(); };
+    u.onstart=function(){ speaking=true; if(voiceBtn) voiceBtn.textContent='停止'; };
+    u.onend=function(){ speaking=false; if(voiceBtn) voiceBtn.textContent='▶ 語音'; };
+    u.onerror=function(){ speaking=false; if(voiceBtn) voiceBtn.textContent='▶ 語音'; openPanel(); };
     try{ window.speechSynthesis.speak(u); }
-    catch(e){ openPanel(); }
+    catch(e){ speaking=false; if(voiceBtn) voiceBtn.textContent='▶ 語音'; openPanel(); }
   }
   function openPanel(){ if(voiceText) voiceText.textContent=pageVoice(); voicePanel?.classList.add('active'); }
   function closePanel(){ voicePanel?.classList.remove('active'); }
