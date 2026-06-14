@@ -58,13 +58,21 @@
 <button class="voice-fab" type="button" data-audio>播放語音</button>
 <script src="assets/runtime.js"></script>
 <script>
-  const slides=[...document.querySelectorAll('.slide')];const toast=document.getElementById('toast'),audio=document.getElementById('slide-audio'),audioBtn=document.querySelector('[data-audio]');
-  function notify(t){toast.textContent=t;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1900)}
-  function currentIndex(){const i=slides.findIndex(s=>s.classList.contains('is-active'));return i<0?0:i}
+  const deck=document.getElementById('deck');
+  const slides=[...deck.querySelectorAll(':scope > .slide')];
+  const toast=document.getElementById('toast'),audio=document.getElementById('slide-audio'),audioBtn=document.querySelector('[data-audio]');
+  function notify(t){toast.textContent=t;toast.classList.add('show');clearTimeout(window.__voiceToastTimer);window.__voiceToastTimer=setTimeout(()=>toast.classList.remove('show'),2200)}
+  function currentIndex(){const i=slides.findIndex(s=>s.classList.contains('is-active')||s.classList.contains('active'));return i<0?0:i}
   function setAudioButton(label){audioBtn.textContent=label}
-  audioBtn.addEventListener('click',()=>{const idx=currentIndex();const src='audio/slide-' + String(idx+1).padStart(2,'0') + '.m4a';if(audio.getAttribute('src')!==src){audio.pause();audio.setAttribute('src',src)}if(audio.paused){audio.play().then(()=>setAudioButton('暫停語音')).catch(()=>{setAudioButton('播放語音');notify('語音檔尚未就緒：' + src)})}else{audio.pause();setAudioButton('播放語音')}});
+  function audioSrcFor(i){return 'audio/slide-' + String(i+1).padStart(2,'0') + '.m4a'}
+  function syncVoiceLabel(){const idx=currentIndex();audioBtn.setAttribute('aria-label','播放第 '+(idx+1)+' 頁語音');if(audio.paused)setAudioButton('播放語音')}
+  audioBtn.addEventListener('click',()=>{const idx=currentIndex();const src=audioSrcFor(idx);if(audio.getAttribute('src')!==src){audio.pause();audio.setAttribute('src',src);audio.load()}if(audio.paused){audio.play().then(()=>{setAudioButton('暫停語音');notify('正在播放第 '+(idx+1)+' 頁語音')}).catch(()=>{setAudioButton('播放語音');notify('語音無法自動播放，請再點一次或檢查手機靜音/音量：' + src)})}else{audio.pause();setAudioButton('播放語音');notify('已暫停語音')}});
   audio.addEventListener('ended',()=>setAudioButton('播放語音'));
-  new MutationObserver(()=>{audio.pause();setAudioButton('播放語音')}).observe(document.getElementById('deck'),{subtree:true,attributes:true,attributeFilter:['class']});
+  audio.addEventListener('error',()=>{setAudioButton('播放語音');notify('語音檔載入失敗，請重新整理頁面')});
+  new MutationObserver(()=>{audio.pause();syncVoiceLabel()}).observe(deck,{subtree:false,attributes:true,attributeFilter:['class'],childList:false});
+  slides.forEach(s=>new MutationObserver(()=>{audio.pause();syncVoiceLabel()}).observe(s,{attributes:true,attributeFilter:['class']}));
+  syncVoiceLabel();
+  window.heartaiAudio={currentIndex,audioSrcFor,get src(){return audio.getAttribute('src')},get paused(){return audio.paused}};
 </script>
 </body>
 </html>
