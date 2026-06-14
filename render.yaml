@@ -4,7 +4,6 @@ services:
     runtime: node
     plan: starter
     region: singapore
-    rootDir: preventive-med-mvp
     buildCommand: npm install
     startCommand: npm start
     healthCheckPath: /api/health
