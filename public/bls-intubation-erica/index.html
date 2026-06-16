@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BLS 與插管急救流程｜艾瑞卡 HTML PPT</title>
+<meta name="description" content="依 BLS/插管課程講義融會貫通整理的 HTML PPT，含逐頁語音。">
+<style>
+:root{--bg:#07111f;--panel:#f8fafc;--ink:#0f172a;--muted:#526176;--line:rgba(15,23,42,.14);--blue:#2563eb;--green:#16a34a;--red:#dc2626;--amber:#f59e0b;--shadow:0 24px 80px rgba(2,8,23,.28)}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",Arial,sans-serif;background:radial-gradient(circle at 20% 10%,#1e40af 0,#07111f 35%,#020617 100%);color:var(--ink)}
+.deck{height:100%;position:relative}.slide{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateX(18px) scale(.99);transition:.36s ease;display:grid;place-items:center;padding:42px 62px 112px}.slide.is-active{opacity:1;pointer-events:auto;transform:none}
+.stage{width:min(1180px,100%);height:min(660px,calc(100vh - 132px));background:linear-gradient(135deg,#ffffff,#f1f5f9);border:1px solid rgba(255,255,255,.22);border-radius:28px;box-shadow:var(--shadow);padding:34px;position:relative;overflow:hidden}.stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(37,99,235,.08),transparent 35%,rgba(22,163,74,.08));pointer-events:none}
+.meta{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;color:#64748b;font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}.content{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:34px;height:calc(100% - 46px);align-items:center}.copy{padding:10px 0}.eyebrow{display:inline-flex;background:#dbeafe;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:950;margin-bottom:18px}h1{font-size:48px;line-height:1.12;margin:0;font-weight:1000;letter-spacing:-.04em;color:#0f172a}.subtitle{font-size:23px;line-height:1.55;margin:18px 0 24px;color:#475569;font-weight:650}ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}li{font-size:20px;line-height:1.42;color:#1f2937;display:grid;grid-template-columns:26px 1fr;gap:12px}li:before{content:"";width:16px;height:16px;border-radius:50%;margin-top:6px;background:linear-gradient(135deg,var(--blue),var(--green));box-shadow:0 0 0 7px rgba(37,99,235,.1)}.visual{margin:0;height:100%;min-height:360px;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(15,23,42,.16);border:1px solid var(--line);background:white}.visual img{width:100%;height:100%;object-fit:cover;display:block}.notes{display:none}.controls{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);transform:translateX(-50%);z-index:50;display:flex;gap:8px;align-items:center;background:rgba(15,23,42,.82);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px;box-shadow:0 14px 48px rgba(0,0,0,.35)}button{border:0;border-radius:999px;background:rgba(255,255,255,.1);color:#e5e7eb;font-weight:900;padding:10px 14px;cursor:pointer}button.primary{background:linear-gradient(135deg,#2563eb,#16a34a);color:white}button:hover{background:rgba(255,255,255,.18)}.progress{position:fixed;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.12);z-index:60}.bar{height:100%;width:10%;background:linear-gradient(90deg,#60a5fa,#22c55e);transition:.25s}.overview{position:fixed;inset:0;background:rgba(2,6,23,.92);z-index:80;display:none;padding:28px;overflow:auto}.overview.show{display:block}.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.thumb{background:#f8fafc;border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:16px;min-height:140px;cursor:pointer}.thumb b{display:block;color:#0f172a;font-size:18px;margin-bottom:8px}.thumb span{color:#475569}.focus .slide:not(.is-active){display:none}.immersive .controls{opacity:.08;transition:.2s}.immersive .controls:hover{opacity:1}.audio-state{position:fixed;right:22px;top:18px;z-index:55;color:#cbd5e1;background:rgba(15,23,42,.72);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:900}
+@media(max-width:820px){html,body{width:100%;max-width:100%;overflow:hidden}.deck{width:100%;max-width:100%;overflow:hidden}.slide{display:block;place-items:initial;padding:12px 0 112px;overflow:hidden;width:100%;max-width:100%}.stage{width:300px;max-width:calc(100% - 72px);height:calc(100vh - 138px);margin:0 auto;padding:18px 14px;overflow:auto;border-radius:20px}.stage:before{display:none}.meta{display:flex;gap:6px;font-size:9px;letter-spacing:.03em;max-width:100%;min-width:0}.content{display:block;height:auto;width:100%;max-width:100%;min-width:0}.copy{padding:0;width:100%;max-width:100%;min-width:0;overflow:hidden}h1{font-size:19px;line-height:1.24;letter-spacing:0;word-break:break-word;overflow-wrap:anywhere;max-width:100%}.subtitle{font-size:13.5px;line-height:1.48;overflow-wrap:anywhere;max-width:100%}ul{gap:8px;max-width:100%}li{font-size:13px;line-height:1.42;grid-template-columns:18px minmax(0,1fr);word-break:break-word;overflow-wrap:anywhere;max-width:100%}li:before{width:10px;height:10px;margin-top:5px}.eyebrow{font-size:11px;padding:5px 9px}.visual{display:none}.controls{left:50%;right:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);transform:translateX(-50%);width:300px;max-width:calc(100% - 72px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;border-radius:16px;padding:6px}button{width:100%;padding:6px 2px;font-size:10.5px;white-space:nowrap}.audio-state{display:none}}</style>
+</head>
+<body>
+<div class="deck" id="deck">
+<section class="slide" data-title="開場" data-audio="audio/slide-01.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>01 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">開場</span>
+        <h1>BLS 與插管：急救現場的優先順序</h1>
+        <p class="subtitle">從「叫叫 CABD」到呼吸道建立：先救命，再優化。</p>
+        <ul><li>先確認現場安全，再接近病人</li><li>用最短時間啟動求救、按壓與 AED</li><li>插管是進階工具，不是取代高品質 CPR</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/cover.svg" alt="BLS 與插管：急救現場的優先順序 視覺圖"></figure>
+    </div>
+    <aside class="notes">這一頁先建立整份簡報的主軸。BLS 和插管看起來是兩個不同主題，但臨床邏輯其實是一條線：先確認安全、快速辨識危急、維持循環，再處理呼吸道。請記得，急救不是比誰做的技術多，而是在正確時間做正確動作。心跳停止時，高品質胸外按壓和 AED 是最前線；插管則是建立穩定通氣與氧合的進階手段。</aside>
+  </div>
+</section><section class="slide" data-title="第一原則" data-audio="audio/slide-02.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>02 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">第一原則</span>
+        <h1>第一步不是壓胸：是現場安全</h1>
+        <p class="subtitle">救援者安全，是整個急救流程的起點。</p>
+        <ul><li>車禍、電擊、火災、瓦斯都要先排除</li><li>救援者倒下，現場會從一個病人變成兩個</li><li>安全確認後，才進入意識、呼吸、脈搏判斷</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/safety.svg" alt="第一步不是壓胸：是現場安全 視覺圖"></figure>
+    </div>
+    <aside class="notes">很多人學急救時會急著背 CABD，但講義最前面提醒的是現場安全。這不是形式，而是真正的第一原則。如果環境仍有車流、電源、火源或化學風險，救援者貿然接近，可能讓事故擴大。真正成熟的急救思維，是先讓自己能夠持續救人，再開始評估病人。</aside>
+  </div>
+</section><section class="slide" data-title="叫叫" data-audio="audio/slide-03.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>03 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">叫叫</span>
+        <h1>兩個「叫」：判斷病人，也召喚系統</h1>
+        <p class="subtitle">第一個叫，是叫病人；第二個叫，是叫支援。</p>
+        <ul><li>檢查意識，同時觀察呼吸與脈搏</li><li>儘快打 119，請人拿 AED</li><li>BLS 是團隊流程，不是英雄流程</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/call.svg" alt="兩個「叫」：判斷病人，也召喚系統 視覺圖"></figure>
+    </div>
+    <aside class="notes">叫叫 CABD 的前兩個叫，代表急救流程一開始就同時處理兩件事：確認病人狀態，以及啟動外部支援。第一個叫，是確認病人是否有反應；第二個叫，是把急救系統拉進來。打 119、拿 AED、分派旁人協助，這些都會直接影響存活鏈是否接上。</aside>
+  </div>
+</section><section class="slide" data-title="C" data-audio="audio/slide-04.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>04 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">C</span>
+        <h1>C：胸外按壓是 BLS 的核心輸出</h1>
+        <p class="subtitle">快快壓、用力壓、胸回彈、莫中斷。</p>
+        <ul><li>速率至少 100 次/分鐘</li><li>成人深度約 5 cm，每次完全回彈</li><li>中斷盡量少於 10 秒</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/compression.svg" alt="C：胸外按壓是 BLS 的核心輸出 視覺圖"></figure>
+    </div>
+    <aside class="notes">胸外按壓不是儀式，它是在暫時替代心臟幫浦。按壓的目標，是維持腦部與冠狀動脈最低限度的血流。速度太慢、深度太淺、胸廓沒有回彈，或中斷太久，都會讓灌流品質下降。所以 BLS 的基本功不是有沒有壓，而是壓得夠不夠好。</aside>
+  </div>
+</section><section class="slide" data-title="A/B" data-audio="audio/slide-05.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>05 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">A/B</span>
+        <h1>A 與 B：打開呼吸道，但不要過度通氣</h1>
+        <p class="subtitle">呼吸道要打開，通氣要有效，也要克制。</p>
+        <ul><li>一般用壓額抬下巴，疑似頸椎傷用下顎推擠</li><li>30:2，吹氣時看胸廓是否上升</li><li>氣袋不要過度擠壓，避免胃脹氣與通氣過量</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/airway.svg" alt="A 與 B：打開呼吸道，但不要過度通氣 視覺圖"></figure>
+    </div>
+    <aside class="notes">呼吸處理的重點是有效，不是越多越好。一般情況下用壓額抬下巴打開呼吸道；如果懷疑頸椎受傷，就改用下顎推擠法。人工呼吸或氣囊通氣時，要觀察胸廓起伏。過度通氣會增加胸腔壓力，也可能造成胃脹氣，所以這一步需要精準，而不是粗暴。</aside>
+  </div>
+</section><section class="slide" data-title="D" data-audio="audio/slide-06.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>06 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">D</span>
+        <h1>D：AED 去顫是「整流」，不是按開關</h1>
+        <p class="subtitle">去顫後，不是等待奇蹟，而是立刻恢復按壓。</p>
+        <ul><li>AED 到場後依指示分析與電擊</li><li>去顫是重置混亂電活動，讓心臟有機會恢復節律</li><li>電擊後立即續壓，避免灌流重新掉下去</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/aed.svg" alt="D：AED 去顫是「整流」，不是按開關 視覺圖"></figure>
+    </div>
+    <aside class="notes">講義裡一句很重要的話是：去顫是整流，而不是刺激心臟產生心跳。AED 的意義，是把混亂的電活動重置，讓心臟有機會重新恢復有效節律。但電擊完不能停著看，因為循環仍然需要胸外按壓維持。成熟的做法是依照 AED 指示，電擊後立刻回到按壓。</aside>
+  </div>
+</section><section class="slide" data-title="插管目的" data-audio="audio/slide-07.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>07 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">插管目的</span>
+        <h1>插管不是炫技：是緊急呼吸道建立</h1>
+        <p class="subtitle">先問為什麼要插，再問能不能安全地插。</p>
+        <ul><li>目的：建立穩定呼吸道、提供通氣與氧合</li><li>該插：無法自行呼吸、呼吸衰竭、麻醉手術需求</li><li>不該貿然插：DNR、無法置入、藥物或條件不足</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/intubation.svg" alt="插管不是炫技：是緊急呼吸道建立 視覺圖"></figure>
+    </div>
+    <aside class="notes">插管的本質，是建立緊急呼吸道，不是展示技術。病人無法自行呼吸、呼吸衰竭，或需要全身麻醉時，插管可能是必要的。但如果病人有 DNR，或現場缺乏必要藥物、設備、監測與人員，就不能只因為會插而插。真正關鍵是適應症、條件與後續維持能力。</aside>
+  </div>
+</section><section class="slide" data-title="插後確認" data-audio="audio/slide-08.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>08 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">插後確認</span>
+        <h1>插完不等於插對：確認比動作更重要</h1>
+        <p class="subtitle">五點聽診、EtCO₂、X 光，是安全閉環。</p>
+        <ul><li>聽診五點：胃、左右肺尖與肺底</li><li>EtCO₂ 是重要即時確認工具</li><li>X 光協助確認管端位置與深度</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/confirm.svg" alt="插完不等於插對：確認比動作更重要 視覺圖"></figure>
+    </div>
+    <aside class="notes">插管最大的風險之一，是管子進入食道卻沒有及時發現。這就是為什麼講義強調插管後要確認。五點聽診可以初步判斷；EtCO₂ 對確認氣管位置非常重要；X 光則能確認深度與位置。請記得，插入只是動作，確認才是安全閉環。</aside>
+  </div>
+</section><section class="slide" data-title="融合觀念" data-audio="audio/slide-09.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>09 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">融合觀念</span>
+        <h1>融會貫通：先救命，再優化</h1>
+        <p class="subtitle">BLS 保住循環；插管穩住呼吸道。兩者要放在同一個復甦節奏裡。</p>
+        <ul><li>心跳停止時，按壓與 AED 優先級極高</li><li>插管若造成長時間中斷 CPR，可能反而傷害病人</li><li>最好的急救，是流程、分工、確認都接得上</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/integrate.svg" alt="融會貫通：先救命，再優化 視覺圖"></figure>
+    </div>
+    <aside class="notes">這份講義真正想傳達的，不只是 BLS 和插管的步驟，而是急救優先順序。心跳停止時，最怕的是按壓中斷和 AED 延誤。插管很重要，但如果為了插管而讓 CPR 停太久，就違背復甦核心。好的急救團隊會把循環、呼吸道、去顫和確認整合在同一個節奏裡。</aside>
+  </div>
+</section><section class="slide" data-title="教學收束" data-audio="audio/slide-10.m4a">
+  <div class="stage">
+    <div class="meta"><span>BLS / Intubation Course</span><span>10 / 10</span></div>
+    <div class="content">
+      <div class="copy">
+        <span class="eyebrow">教學收束</span>
+        <h1>一句話記住：做對、不中斷、要確認</h1>
+        <p class="subtitle">急救教育不是背答案，而是養成安全判斷。</p>
+        <ul><li>BLS：及時、正確、不中斷</li><li>插管：適應症、技術、確認、後續維持</li><li>任何處置都要能回答：為什麼做？做完怎麼知道有效？</li></ul>
+      </div>
+      <figure class="visual"><img src="assets/images/summary.svg" alt="一句話記住：做對、不中斷、要確認 視覺圖"></figure>
+    </div>
+    <aside class="notes">最後收束成一句話：做對、不中斷、要確認。BLS 的價值在於及時啟動和高品質執行；插管的價值在於正確適應症和確實確認。教學時不要只要求學員背口訣，而要讓他們理解每一步背後的目的。真正可靠的急救者，能在壓力下做出正確順序。</aside>
+  </div>
+</section>
+</div>
+<div class="audio-state" id="audioState">語音：待播放</div>
+<nav class="controls" aria-label="簡報控制列">
+<button id="prev">上一頁</button><button id="next" class="primary">下一頁</button><button id="overviewBtn">總覽</button><button id="focusBtn">重點</button><button id="immersiveBtn">沉浸</button><button id="audioBtn">播放語音</button>
+</nav><div class="progress"><div class="bar" id="bar"></div></div><div class="overview" id="overview"><div class="thumbs" id="thumbs"></div></div><audio id="audio" preload="metadata"></audio>
+<script>
+const slides=[...document.querySelectorAll('.slide')];let idx=0;const deck=document.getElementById('deck'),bar=document.getElementById('bar'),audio=document.getElementById('audio'),audioBtn=document.getElementById('audioBtn'),audioState=document.getElementById('audioState');
+function show(i, autoplay=false){idx=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,n)=>s.classList.toggle('is-active',n===idx));bar.style.width=((idx+1)/slides.length*100)+'%';location.hash='#/'+(idx+1);audio.pause();audio.src=slides[idx].dataset.audio;audioBtn.textContent='播放語音';audioState.textContent='語音：第 '+(idx+1)+' 頁';if(autoplay) audio.play().then(()=>{audioBtn.textContent='暫停語音';audioState.textContent='語音：播放中'}).catch(()=>{})}
+function next(){show(idx+1)}function prev(){show(idx-1)}document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')next();if(e.key==='ArrowLeft'||e.key==='PageUp')prev();if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key.toLowerCase()==='o')toggleOverview();if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.();});
+function toggleOverview(){document.getElementById('overview').classList.toggle('show')}document.getElementById('overviewBtn').onclick=toggleOverview;document.getElementById('focusBtn').onclick=()=>document.body.classList.toggle('focus');document.getElementById('immersiveBtn').onclick=()=>document.body.classList.toggle('immersive');
+audioBtn.onclick=()=>{if(audio.paused){if(!audio.src) audio.src=slides[idx].dataset.audio;audio.play().then(()=>{audioBtn.textContent='暫停語音';audioState.textContent='語音：播放中'})}else{audio.pause();audioBtn.textContent='播放語音';audioState.textContent='語音：已暫停'}};audio.addEventListener('ended',()=>{audioBtn.textContent='播放語音';audioState.textContent='語音：已結束'});
+document.getElementById('thumbs').innerHTML=slides.map((s,n)=>`<div class="thumb" data-i="${n}"><b>${String(n+1).padStart(2,'0')}｜${s.dataset.title}</b><span>${s.querySelector('h1').textContent}</span></div>`).join('');document.getElementById('thumbs').onclick=e=>{const t=e.target.closest('.thumb');if(t){toggleOverview();show(+t.dataset.i)}};
+const m=location.hash.match(/#\/(\d+)/);show(m?+m[1]-1:0);
+</script>
+</body>
+</html>
